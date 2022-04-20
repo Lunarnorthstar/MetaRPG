@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using Cinemachine;
 
 public class PointAndClick : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class PointAndClick : MonoBehaviour
     [Header("Particle Systems")]
     public GameObject successfulClickParticle;
     public GameObject unsuccessfulClickParticle;
+
+    [Header("Character Switching System")]
+    public GameObject selectionArrow;
+    public CinemachineVirtualCamera VirtualCam;
+    public bool isActiveCharacter;
 
     //other navigation stuff--------
 
@@ -36,13 +42,27 @@ public class PointAndClick : MonoBehaviour
         navigationPoint = transform.position;
 
         InvokeRepeating("updatePath", 0, 0.1f);
+
+        if (isActiveCharacter)
+        {
+            selectionArrow.SetActive(true);
+
+            VirtualCam.Follow = transform;
+        }
+        else
+        {
+            selectionArrow.SetActive(false);
+        }
     }
 
     //this calculates the path to the next waypoint.
     //dont call it in update because its very expensive
     void updatePath()
     {
-        seeker.StartPath(rb.position, navigationPoint, hasFinishedCalculating);
+        if (isActiveCharacter)
+        {
+            seeker.StartPath(rb.position, navigationPoint, hasFinishedCalculating);
+        }
     }
 
     //I dont really understand what this even does ngl
@@ -58,7 +78,8 @@ public class PointAndClick : MonoBehaviour
     //this does all the pathfinding to the place you clicked
     void FixedUpdate()
     {
-        if (path == null) return;
+        if (path == null)
+            return;
 
         if (currentWayPointIndex >= path.vectorPath.Count)
         {
@@ -83,41 +104,75 @@ public class PointAndClick : MonoBehaviour
         }
     }
 
+    public void swtichCharacter()
+    {
+        isActiveCharacter = true;
+
+        selectionArrow.SetActive(true);
+
+        VirtualCam.Follow = transform;
+    }
 
     void Update()
     {
         //get the position of the mouse in a vector2
         mousepos = new Vector2(
-        (mainCam.ScreenToWorldPoint(Input.mousePosition).x),
-        (mainCam.ScreenToWorldPoint(Input.mousePosition).y)
+            (mainCam.ScreenToWorldPoint(Input.mousePosition).x),
+            (mainCam.ScreenToWorldPoint(Input.mousePosition).y)
         );
 
         //if you click, it will store that position in a vector3 (so that it can be used in the waypoint system)
-        if (Input.GetMouseButtonDown(0))
+        if (isActiveCharacter)
         {
-            RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);
-
-            //have you clicked on a building (somewhere the player cannot move to)
-            if (hit.collider != null)
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.collider.gameObject.layer == 7)
-                {
-                    //spawn in a particle effect and delete it after 2 seconds. Do nothing else.
-                    Vector3 spawnPos = new Vector3(mousepos.x, mousepos.y, transform.position.z);
+                RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);
 
-                    GameObject particleInstance = Instantiate(unsuccessfulClickParticle, spawnPos, Quaternion.identity);
-                    Destroy(particleInstance, 2);
-                }
-                else
-                {
-                    navigationPoint = new Vector3(mousepos.x, mousepos.y, transform.position.z);
 
-                    GameObject particleInstance = Instantiate(successfulClickParticle, navigationPoint, Quaternion.identity);
-                    Destroy(particleInstance, 2);
+                if (hit.collider != null)
+                {
+                    if (hit.collider.gameObject.layer == 8)
+                    {
+                        if (hit.collider.gameObject != gameObject)
+                        {
+                            hit.collider.GetComponent<PointAndClick>().swtichCharacter();
+
+                            //Debug.Log(hit.collider.gameObject.name);
+                            isActiveCharacter = false;
+                            selectionArrow.SetActive(false);
+                        }
+                    }
+
+                    //have you clicked on a building (somewhere the player cannot move to)
+                    if (hit.collider.gameObject.layer == 7)
+                    {
+                        //spawn in a particle effect and delete it after 2 seconds. Do nothing else.
+                        Vector3 spawnPos = new Vector3(
+                            mousepos.x,
+                            mousepos.y,
+                            transform.position.z
+                        );
+
+                        GameObject particleInstance = Instantiate(
+                            unsuccessfulClickParticle,
+                            spawnPos,
+                            Quaternion.identity
+                        );
+                        Destroy(particleInstance, 2);
+                    }
+                    else
+                    {
+                        navigationPoint = new Vector3(mousepos.x, mousepos.y, transform.position.z);
+
+                        GameObject particleInstance = Instantiate(
+                            successfulClickParticle,
+                            navigationPoint,
+                            Quaternion.identity
+                        );
+                        Destroy(particleInstance, 2);
+                    }
                 }
             }
         }
     }
-
-
 }
