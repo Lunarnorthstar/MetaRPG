@@ -11,12 +11,18 @@ public class BattlePointAndClick : MonoBehaviour
     public Color tileSelectedRightColour;
     public Color tileSelectedWrongColour;
     public Color tileInRangeColour;
+    [Space]
+    public Color enemyTileColour;
 
+    [Header("All of the characters in the game")]
     public PointAndClick[] players;
+    public EnemyBehaviour[] enemies;
 
     void Start()
     {
         players = FindObjectsOfType<PointAndClick>();
+
+        enemies = FindObjectsOfType<EnemyBehaviour>();
     }
 
     private void FixedUpdate()
@@ -30,7 +36,11 @@ public class BattlePointAndClick : MonoBehaviour
             players[i].tileSelectedRightColour = tileSelectedRightColour;
             players[i].tileSelectedWrongColour = tileSelectedWrongColour;
             players[i].tileInRangeColour = tileInRangeColour;
+        }
 
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].tileColour = enemyTileColour;
         }
     }
 }

@@ -11,6 +11,10 @@ public class BattleManager : MonoBehaviour
 
     public Text turnText;
 
+    [Header("Carousel parameters")]
+    public Rigidbody2D carouselRB;
+    public float carouselForce;
+
     //round will procees once you finish doing an attack.
     public void startTurn()
     {
@@ -35,6 +39,11 @@ public class BattleManager : MonoBehaviour
             hasAttacked = false;
             endTurn();
         }
+    }
+
+    public void moveCarousel()
+    {
+        carouselRB.AddTorque(carouselForce);
     }
 
     public void endTurn()

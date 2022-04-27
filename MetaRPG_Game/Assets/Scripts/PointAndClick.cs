@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class PointAndClick : MonoBehaviour
 {
@@ -197,7 +198,7 @@ public class PointAndClick : MonoBehaviour
             {
                 RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);//see if theres anything where the mouse is
 
-                if (hit.collider != null)//did ya hhit something?
+                if (hit.collider != null && !EventSystem.current.IsPointerOverGameObject())//did ya hhit something?
                 {
                     GameObject objectYouHit = hit.collider.gameObject; //store the hit object in a local variable
 
