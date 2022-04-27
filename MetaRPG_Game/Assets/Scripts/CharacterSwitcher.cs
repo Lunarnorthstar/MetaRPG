@@ -33,7 +33,7 @@ public class CharacterSwitcher : MonoBehaviour
         }
     }
 
-    void swtichCharacter()
+    public void swtichCharacter()
     {
 
         if (characterSelectionIndex == 3)

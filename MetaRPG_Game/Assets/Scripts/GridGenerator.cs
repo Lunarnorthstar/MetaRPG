@@ -20,6 +20,13 @@ public class GridGenerator : MonoBehaviour
     int currentX;
     int currentY;
 
+    private void Awake()
+    {
+        generateTiles();
+
+        // InvokeRepeating("generateTiles", 0, 1f);
+    }
+
     public void generateTiles()
     {
         for (int i = 0; i < gridObjects.Count; i++)
