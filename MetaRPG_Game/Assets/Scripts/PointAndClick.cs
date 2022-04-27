@@ -104,13 +104,23 @@ public class PointAndClick : MonoBehaviour
         }
     }
 
-    public void swtichCharacter()
+    public void swtichCharacter(bool isNowActiveCharacter)
     {
-        isActiveCharacter = true;
+        if (isNowActiveCharacter)//if is now active character swicth its arrow and make the camera follow it.
+        {
+            isActiveCharacter = true;
 
-        selectionArrow.SetActive(true);
+            selectionArrow.SetActive(true);
 
-        VirtualCam.Follow = transform;
+            VirtualCam.Follow = transform;
+        }
+        else //otherwise, switch it off.
+        {
+            isActiveCharacter = false;
+            selectionArrow.SetActive(false);
+        }
+
+
     }
 
     void Update()
@@ -131,18 +141,6 @@ public class PointAndClick : MonoBehaviour
 
                 if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject.layer == 8)
-                    {
-                        if (hit.collider.gameObject != gameObject)
-                        {
-                            hit.collider.GetComponent<PointAndClick>().swtichCharacter();
-
-                            //Debug.Log(hit.collider.gameObject.name);
-                            isActiveCharacter = false;
-                            selectionArrow.SetActive(false);
-                        }
-                    }
-
                     //have you clicked on a building (somewhere the player cannot move to)
                     if (hit.collider.gameObject.layer == 7)
                     {
