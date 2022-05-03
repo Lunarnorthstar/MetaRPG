@@ -1,33 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public BattleManager battleManager;
+    public int attackRange;
+    public int attackDamage;
 
-    // Update is called once per frame
-    void Update()
+    public BattleManager battleManager;
+    public Button attackButton;
+
+    public PointAndClick pointAndClick;
+
+    public bool canAttack;
+
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (battleManager.isAlliedTurn)
-            {
-                attack();
-            }
-        }
+        pointAndClick = GetComponent<PointAndClick>();
     }
 
-
-    public void attack()
+    public void isMyTurn()
     {
+        attackButton.onClick.RemoveAllListeners();
+        attackButton.onClick.AddListener(activateAttack);
 
-        if (battleManager.isAlliedTurn)
+        attackButton.interactable = false;
+    }
+
+    public void activateAttack()
+    {
+        pointAndClick.canAttack = true;
+    }
+
+    public void finishedMoving()//when you're done moving, it should make the attack button interactable
+    {
+        attackButton.interactable = true;
+    }
+
+    public void attack(TileInfo tile)
+    {
+        if (tile.canAttackonThisTile)
         {
-            battleManager.hasAttacked = true;
-
-            Debug.Log("Bam! just attacked for 999 damage");
+            tile.currentEnemy.GetComponent<UniversalHealthSystem>().takeDamage(attackDamage);//deal damage to the enemy that is on the tile you clciked on
         }
+        Debug.Log("did " + attackDamage + " damage to " + tile.currentEnemy);
 
+        battleManager.AdvanceTurn();
     }
 }

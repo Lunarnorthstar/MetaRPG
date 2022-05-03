@@ -6,6 +6,8 @@ public class GridGenerator : MonoBehaviour
 {
     public List<GameObject> gridObjects = new List<GameObject>();
 
+    GameObject tileParent;
+
     [Header("the width and height of the grid in amount of squares")]
     public int gridWidth;
     public int gridHeight;
@@ -22,6 +24,11 @@ public class GridGenerator : MonoBehaviour
 
     private void Awake()
     {
+        tileParent = new GameObject();
+        tileParent.transform.position = Vector3.zero;
+        tileParent.transform.rotation = Quaternion.identity;
+        tileParent.name = "Tiles";
+
         generateTiles();
 
         // InvokeRepeating("generateTiles", 0, 1f);
@@ -50,6 +57,8 @@ public class GridGenerator : MonoBehaviour
                 GameObject objectInstance = Instantiate(gridObject, position, Quaternion.identity);
 
                 objectInstance.transform.localScale = new Vector3(gridSquareSize, gridSquareSize, gridSquareSize);
+
+                objectInstance.transform.parent = tileParent.transform;
 
                 gridObjects.Add(objectInstance);
             }

@@ -5,56 +5,59 @@ using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
-    public bool isAlliedTurn;
 
-    public bool hasAttacked;
+    public List<CharacterTurnManager> characters = new List<CharacterTurnManager>();
+    int currentCharacter;
 
-    public Text turnText;
+    bool hasMoved;
+    bool hasAttacked;
 
-    [Header("Carousel parameters")]
-    public Rigidbody2D carouselRB;
-    public float carouselForce;
-
-    //round will procees once you finish doing an attack.
-    public void startTurn()
-    {
-        if (isAlliedTurn)
+    /*
+        void Awake()
         {
-            turnText.text = "Your Turn";
-            turnText.GetComponent<Animator>().Play("Turn");
+           // CharacterTurnManager[] charactersArray = FindObjectsOfType<CharacterTurnManager>();
 
+         //   for (int i = 0; i < charactersArray.Length; i++)
+          //  {
+           //     characters.Add(charactersArray[i]);
+           / }
+
+        }
+        */
+    void Start()
+    {
+        currentCharacter = 0;
+
+        characters[currentCharacter].switchTurn();
+    }
+
+    public void checkInfo(bool moved, bool attacked)//this is called whenever a character either moves or attacks to verify what they just did.
+    {
+        if (moved)
+        {
+            hasMoved = true;
+        }
+
+        if (attacked)
+        {
             hasAttacked = false;
         }
-        else
-        {
-            turnText.text = "Enemy Turn";
-            turnText.GetComponent<Animator>().Play("Turn");
-        }
     }
 
-    void Update()
+    public void AdvanceTurn()//when the turn is advanced, it should do the following
     {
-        if (hasAttacked)//this is where the check for if the turn has ended - put whatever you want in this if statement.
+        if (currentCharacter == characters.Count - 1)//if we are ob the last character in the scene, then it will go back to 0
         {
-            hasAttacked = false;
-            endTurn();
+            currentCharacter = 0;
         }
+        else//otherwise iterate by one
+        {
+            currentCharacter++;
+        }
+
+        //then activate the character switcher
+        characters[currentCharacter].switchTurn();
+
     }
 
-    public void moveCarousel()
-    {
-        carouselRB.AddTorque(carouselForce);
-    }
-
-    public void endTurn()
-    {
-        if (isAlliedTurn)
-        {
-            isAlliedTurn = false;
-        }
-        else
-        {
-            isAlliedTurn = true;
-        }
-    }
 }
