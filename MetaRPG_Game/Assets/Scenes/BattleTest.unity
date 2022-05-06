@@ -55183,6 +55183,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 910117425}
     - target: {fileID: 2034395892, guid: 8dfbecf816d9bc543bf8456d9c3c0f69, type: 3}
+      propertyPath: navigationPoint.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034395892, guid: 8dfbecf816d9bc543bf8456d9c3c0f69, type: 3}
+      propertyPath: navigationPoint.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034395892, guid: 8dfbecf816d9bc543bf8456d9c3c0f69, type: 3}
       propertyPath: battleSystemMaxMoveDistance
       value: 10
       objectReference: {fileID: 0}
@@ -55355,6 +55363,14 @@ PrefabInstance:
       propertyPath: battleManager
       value: 
       objectReference: {fileID: 910117425}
+    - target: {fileID: 601555831, guid: ab168a4940e9993458c5dc06bbe0b540, type: 3}
+      propertyPath: navigationPoint.x
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 601555831, guid: ab168a4940e9993458c5dc06bbe0b540, type: 3}
+      propertyPath: navigationPoint.y
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 601555831, guid: ab168a4940e9993458c5dc06bbe0b540, type: 3}
       propertyPath: battleSystemMaxMoveDistance
       value: 12
@@ -55589,6 +55605,14 @@ PrefabInstance:
       propertyPath: battleManager
       value: 
       objectReference: {fileID: 910117425}
+    - target: {fileID: 3991943170742512466, guid: 077ff396f0712a3468c3094e5eac52d8, type: 3}
+      propertyPath: navigationPoint.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991943170742512466, guid: 077ff396f0712a3468c3094e5eac52d8, type: 3}
+      propertyPath: navigationPoint.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3991943170742512466, guid: 077ff396f0712a3468c3094e5eac52d8, type: 3}
       propertyPath: battleSystemMaxMoveDistance
       value: 15
