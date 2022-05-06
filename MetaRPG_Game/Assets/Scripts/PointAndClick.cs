@@ -19,7 +19,8 @@ public class PointAndClick : MonoBehaviour
     public bool isGoblin;
     public List<GameObject> allTiles = new List<GameObject>();
     public List<EnemyBehaviour> allEnemies = new List<EnemyBehaviour>();
-    public BattleManager battleManager;
+
+    public BattleManager battleManager; //DAVID  = PlayerAbilities = VALORANT THERE4 DAVE IZ ABIG POG GAMER!! N THAZ A FACT!!!!  This is 
     public float battleSystemMaxMoveDistance;
     public PlayerAttack playerAttack;
 
@@ -59,6 +60,7 @@ public class PointAndClick : MonoBehaviour
         seeker = GetComponent<Seeker>();
         mainCam = Camera.main;
 
+        PlayerPrefs.SetInt("canMove", 1); //alow player to move
 
         //non battle stuff
         if (!isInBattle)
@@ -83,15 +85,14 @@ public class PointAndClick : MonoBehaviour
             for (int i = 0; i < allEnemies_.Length; i++)
             {
                 allEnemies.Add(allEnemies_[i]);
-                // alltiles_[i].GetComponent<SpriteRenderer>().color = tileDefaultColour;
             }
 
             InvokeRepeating("checkDistanceToCubes", 0, 0.1f);
 
             playerAttack = GetComponent<PlayerAttack>();
 
-            float randomPos = Random.Range(-20f, 20f);
-            navigationPoint = new Vector3(randomPos, randomPos, 0);
+            //float randomPos = Random.Range(-20f, 20f);
+            //navigationPoint = new Vector3(randomPos, randomPos, 0);
 
         }
         if (isActiveCharacter)
@@ -176,7 +177,8 @@ public class PointAndClick : MonoBehaviour
             {
                 for (int i = 0; i < allTiles.Count; i++)
                 {
-                    if (Mathf.Ceil(Vector3.Distance(allTiles[i].transform.position, transform.position)) > battleSystemMaxMoveDistance)
+                    if ((Mathf.Ceil(Vector3.Distance(allTiles[i].transform.position, transform.position)) > battleSystemMaxMoveDistance)
+                    || allTiles[i].GetComponent<TileInfo>().hasPlayerOnIt)
                     {
                         allTiles[i].GetComponent<SpriteRenderer>().color = tileDefaultColour;
                     }
@@ -299,11 +301,13 @@ public class PointAndClick : MonoBehaviour
                 {
                     GameObject objectYouHit = hit.collider.gameObject; //store the hit object in a local variable
 
+                    //Debug.Log(objectYouHit.name);
+
                     if (objectYouHit.CompareTag("Tile"))//is it a tile?
                     {
                         if (Input.GetMouseButtonDown(0))//did you click this frame?
                         {
-                            if (canMove)//if you clicked on a tile you can click on and you can move
+                            if (canMove && PlayerPrefs.GetInt("canMove") == 1)//if you clicked on a tile you can click on and you can move AND the delay has been met
                             {
                                 if (Mathf.Floor(Vector3.Distance(transform.position, objectYouHit.transform.position))
                                  < battleSystemMaxMoveDistance)//is the tile u clicked on within movement range?
@@ -325,6 +329,8 @@ public class PointAndClick : MonoBehaviour
                                         playerAttack.attack(objectYouHit.GetComponent<TileInfo>());//ATTACK
 
                                         canAttack = false;
+
+                                        StartCoroutine(waitToMove());
                                     }
                                 }
                             }
@@ -384,6 +390,13 @@ public class PointAndClick : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator waitToMove()
+    {
+        PlayerPrefs.SetInt("canMove", 0);
+        yield return new WaitForSeconds(0.1f);
+        PlayerPrefs.SetInt("canMove", 1);
     }
 }
 

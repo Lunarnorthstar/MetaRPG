@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -12,18 +13,6 @@ public class BattleManager : MonoBehaviour
     bool hasMoved;
     bool hasAttacked;
 
-    /*
-        void Awake()
-        {
-           // CharacterTurnManager[] charactersArray = FindObjectsOfType<CharacterTurnManager>();
-
-         //   for (int i = 0; i < charactersArray.Length; i++)
-          //  {
-           //     characters.Add(charactersArray[i]);
-           / }
-
-        }
-        */
     void Start()
     {
         currentCharacter = 0;

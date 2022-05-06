@@ -8,6 +8,8 @@ public class TileInfo : MonoBehaviour
     public bool isTileInRange;// this specifies wether this tile is ready for an attack (in range)
     public EnemyBehaviour currentEnemy;
 
+    public bool hasPlayerOnIt;
+
     public bool canAttackonThisTile;
 
     void FixedUpdate()
@@ -15,6 +17,10 @@ public class TileInfo : MonoBehaviour
         if (hasEnemyOnIt && isTileInRange)
         {
             canAttackonThisTile = true;
+        }
+        else
+        {
+            canAttackonThisTile = false;
         }
     }
 }

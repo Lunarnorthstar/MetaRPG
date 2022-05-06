@@ -75,6 +75,15 @@ public class UniversalHealthSystem : MonoBehaviour
             //battle manager
             BattleManager battleManager = FindObjectOfType<BattleManager>();
             battleManager.characters.Remove(GetComponent<CharacterTurnManager>());
+
+            /*
+            //PLAYERS THEMSELVES
+            List<PointAndClick> players_ = GetComponent<PointAndClick>().players;//list of all th eplauers
+
+            foreach (var player in players_)
+            {
+                player.players.Remove(GetComponent<PointAndClick>());
+            }*/
         }
 
         Destroy(gameObject);

@@ -56,9 +56,20 @@ public class CharacterSwitcher : MonoBehaviour
                 {
                     characterHeadshot.sprite = character1Sprite;
                 }
-                character1.swtichCharacter(true);
-                character2.swtichCharacter(false);
-                character3.swtichCharacter(false);
+
+                if (character1 != null)
+                {
+                    character1.swtichCharacter(true);
+                }
+
+                if (character2 != null)
+                {
+                    character2.swtichCharacter(false);
+                }
+                if (character3 != null)
+                {
+                    character3.swtichCharacter(false);
+                }
 
                 break;
 
@@ -67,9 +78,19 @@ public class CharacterSwitcher : MonoBehaviour
                 {
                     characterHeadshot.sprite = character2Sprite;
                 }
-                character1.swtichCharacter(false);
-                character2.swtichCharacter(true);
-                character3.swtichCharacter(false);
+                if (character1 != null)
+                {
+                    character1.swtichCharacter(false);
+                }
+
+                if (character2 != null)
+                {
+                    character2.swtichCharacter(true);
+                }
+                if (character3 != null)
+                {
+                    character3.swtichCharacter(false);
+                }
 
                 break;
 
@@ -78,18 +99,38 @@ public class CharacterSwitcher : MonoBehaviour
                 {
                     characterHeadshot.sprite = character3Sprite;
                 }
-                character1.swtichCharacter(false);
-                character2.swtichCharacter(false);
-                character3.swtichCharacter(true);
+                if (character1 != null)
+                {
+                    character1.swtichCharacter(false);
+                }
+
+                if (character2 != null)
+                {
+                    character2.swtichCharacter(false);
+                }
+                if (character3 != null)
+                {
+                    character3.swtichCharacter(true);
+                }
 
                 break;
 
             case 4:
                 characterHeadshot.sprite = character4Sprite; //no need to check if in battle bcs it neva goes to 4 otherwise.
 
-                character1.swtichCharacter(false);
-                character2.swtichCharacter(false);
-                character3.swtichCharacter(false);
+                if (character1 != null)
+                {
+                    character1.swtichCharacter(false);
+                }
+
+                if (character2 != null)
+                {
+                    character2.swtichCharacter(false);
+                }
+                if (character3 != null)
+                {
+                    character3.swtichCharacter(false);
+                }
 
                 virtualCam.Follow = enemy.transform;
 

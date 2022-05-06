@@ -5,7 +5,7 @@ using UnityEngine;
 public class BattlePointAndClick : MonoBehaviour
 {
     public float playerSpeed;
-    public float battleSystemMaxMoveDistance;
+    //public float battleSystemMaxMoveDistance;
 
     public Color tileDefaultColour;
     public Color tileSelectedRightColour;
@@ -43,23 +43,29 @@ public class BattlePointAndClick : MonoBehaviour
 
     private void FixedUpdate()
     {
-        for (int i = 0; i < players.Count; i++)
+        if (players.Count > 0)
         {
-            players[i].playerSpeed = playerSpeed;
-            players[i].battleSystemMaxMoveDistance = battleSystemMaxMoveDistance;
+            for (int i = 0; i < players.Count; i++)
+            {
+                players[i].playerSpeed = playerSpeed;
+                // players[i].battleSystemMaxMoveDistance = battleSystemMaxMoveDistance;
 
-            players[i].tileDefaultColour = tileDefaultColour;
-            players[i].tileSelectedRightColour = tileSelectedRightColour;
-            players[i].tileSelectedWrongColour = tileSelectedWrongColour;
-            players[i].tileInRangeColour = tileInRangeColour;
-            players[i].tileInRangeOfAttackColor = tileInRangeOfAttackColour;
-            players[i].tileEnemyColour = tileEnemyColour;
+                players[i].tileDefaultColour = tileDefaultColour;
+                players[i].tileSelectedRightColour = tileSelectedRightColour;
+                players[i].tileSelectedWrongColour = tileSelectedWrongColour;
+                players[i].tileInRangeColour = tileInRangeColour;
+                players[i].tileInRangeOfAttackColor = tileInRangeOfAttackColour;
+                players[i].tileEnemyColour = tileEnemyColour;
+            }
         }
 
-        for (int i = 0; i < enemies.Count; i++)
+        if (enemies.Count > 0)
         {
-            enemies[i].tileColour = enemyTileColour;
-            enemies[i].defaultColour = enemyDefaultColour;
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                enemies[i].tileColour = enemyTileColour;
+                enemies[i].defaultColour = enemyDefaultColour;
+            }
         }
     }
 }
