@@ -40,6 +40,7 @@ public class PointAndClick : MonoBehaviour
     public CinemachineVirtualCamera VirtualCam;
     public bool isActiveCharacter;
 
+
     //other navigation stuff--------
 
     bool reachedEndOfPath;

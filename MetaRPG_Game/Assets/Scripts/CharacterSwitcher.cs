@@ -162,6 +162,10 @@ public class CharacterSwitcher : MonoBehaviour
                 character2.swtichCharacter(false);
                 character3.swtichCharacter(false);
 
+                character1.gameObject.SetActive(true);
+                character2.gameObject.SetActive(false);
+                character3.gameObject.SetActive(false);
+
                 break;
 
             case 2:
@@ -173,6 +177,10 @@ public class CharacterSwitcher : MonoBehaviour
                 character2.swtichCharacter(true);
                 character3.swtichCharacter(false);
 
+                character1.gameObject.SetActive(false);
+                character2.gameObject.SetActive(true);
+                character3.gameObject.SetActive(false);
+
                 break;
 
             case 3:
@@ -183,6 +191,10 @@ public class CharacterSwitcher : MonoBehaviour
                 character1.swtichCharacter(false);
                 character2.swtichCharacter(false);
                 character3.swtichCharacter(true);
+
+                character1.gameObject.SetActive(false);
+                character2.gameObject.SetActive(false);
+                character3.gameObject.SetActive(true);
 
                 break;
         }
