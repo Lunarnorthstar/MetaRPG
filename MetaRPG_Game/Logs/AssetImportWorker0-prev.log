@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.18f1 (a7d1c678663c) revision 10998214'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19043.1645; Version 2009; 64bit' Language: 'en' Physical Memory: 32699 MB
+OS: 'Windows 10 Home; OS build 22000.613; Version 2009; 64bit' Language: 'en' Physical Memory: 32157 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
@@ -11,113 +11,199 @@ C:\Program Files\Unity\Hub\Editor\2020.3.18f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/lisam/Documents/GitHub/MetaRPG/MetaRPG_Game
+C:/Users/Lunar/OneDrive/Documents/Repo/MetaRPG/MetaRPG_Game
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-65456
-Successfully changed project path to: C:/Users/lisam/Documents/GitHub/MetaRPG/MetaRPG_Game
-C:/Users/lisam/Documents/GitHub/MetaRPG/MetaRPG_Game
+58329
+Successfully changed project path to: C:/Users/Lunar/OneDrive/Documents/Repo/MetaRPG/MetaRPG_Game
+C:/Users/Lunar/OneDrive/Documents/Repo/MetaRPG/MetaRPG_Game
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 43.46 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 45.43 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.18f1 (a7d1c678663c)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/lisam/Documents/GitHub/MetaRPG/MetaRPG_Game/Assets
+[Subsystems] Discovering subsystems at path C:/Users/Lunar/OneDrive/Documents/Repo/MetaRPG/MetaRPG_Game/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2070 SUPER (ID=0x1e84)
+    Renderer: NVIDIA GeForce RTX 3070 Laptop GPU (ID=0x249d)
     Vendor:   
-    VRAM:     8011 MB
-    Driver:   30.0.15.1165
+    VRAM:     8044 MB
+    Driver:   30.0.15.1179
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56980
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56444
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.18f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001892 seconds.
+Registered in 0.001700 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 40.06 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 37.87 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.903 seconds
+- Completed reload, in  0.843 seconds
 Domain Reload Profiling:
-	ReloadAssembly (903ms)
-		BeginReloadAssembly (50ms)
+	ReloadAssembly (843ms)
+		BeginReloadAssembly (35ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (359ms)
-			LoadAssemblies (48ms)
+		EndReloadAssembly (288ms)
+			LoadAssemblies (34ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (133ms)
+			SetupTypeCache (95ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (26ms)
-			SetupLoadedEditorAssemblies (139ms)
+			RebuildScriptCaches (19ms)
+			SetupLoadedEditorAssemblies (125ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (3ms)
+				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (40ms)
-				BeforeProcessingInitializeOnLoad (7ms)
-				ProcessInitializeOnLoadAttributes (65ms)
-				ProcessInitializeOnLoadMethodAttributes (24ms)
+				RefreshPlugins (38ms)
+				BeforeProcessingInitializeOnLoad (6ms)
+				ProcessInitializeOnLoadAttributes (57ms)
+				ProcessInitializeOnLoadMethodAttributes (19ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.003849 seconds.
+Registered in 0.003019 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-0000019C7F4F8100 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F4F8100 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A76E60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6B8E680 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F600D90 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F519FE0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A76E60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F4F8100 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A8A070 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE66ABA20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F4F8100 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A9F680 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F514010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\PackageToolsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE730A010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE5EF6220 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE73178C0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A9F680 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE65CC230 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE65CC230 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F88E030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE732A020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE61DE010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE71E5020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE604EA20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE5E6B010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F600D90 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE604EA20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A9F680 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE604EA20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\AstarPathfindingProject.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE604EA20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7487D00 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F6FB430 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE685A020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE73404D0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F741020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F6FEDE0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE647EE40 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\AstarPathfindingProjectEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6074C30 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE6A9F680 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 38.74 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 35.76 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.938 seconds
+- Completed reload, in  0.766 seconds
 Domain Reload Profiling:
-	ReloadAssembly (939ms)
-		BeginReloadAssembly (117ms)
+	ReloadAssembly (767ms)
+		BeginReloadAssembly (94ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (16ms)
-		EndReloadAssembly (768ms)
-			LoadAssemblies (77ms)
+			CreateAndSetChildDomain (14ms)
+		EndReloadAssembly (632ms)
+			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (248ms)
-			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (45ms)
-			SetupLoadedEditorAssemblies (294ms)
+			SetupTypeCache (192ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (35ms)
+			SetupLoadedEditorAssemblies (259ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (39ms)
-				BeforeProcessingInitializeOnLoad (59ms)
-				ProcessInitializeOnLoadAttributes (176ms)
-				ProcessInitializeOnLoadMethodAttributes (10ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (36ms)
+				BeforeProcessingInitializeOnLoad (50ms)
+				ProcessInitializeOnLoadAttributes (154ms)
+				ProcessInitializeOnLoadMethodAttributes (9ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2505 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 113.8 MB.
 System memory in use after: 114.0 MB.
 
 Unloading 28 unused Assets to reduce memory usage. Loaded Objects now: 2947.
-Total: 3.020900 ms (FindLiveObjects: 0.228800 ms CreateObjectMapping: 0.090300 ms MarkObjects: 2.636900 ms  DeleteObjects: 0.064200 ms)
+Total: 2.779900 ms (FindLiveObjects: 0.223300 ms CreateObjectMapping: 0.065900 ms MarkObjects: 2.409200 ms  DeleteObjects: 0.080400 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -131,64 +217,146 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  path: Assets/minmap.renderTexture
-  artifactKey: Guid(c04ef7bc16d01ee4688f2e9c1983b753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/minmap.renderTexture using Guid(c04ef7bc16d01ee4688f2e9c1983b753) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d97e6548248da804fdc5585bab4d2f1') in 0.072245 seconds 
-  Import took 0.075447 seconds .
+  path: Assets/Audio/bensound-hipjazz.mp3
+  artifactKey: Guid(ae02ea60bac95cf45b5ec1d45e281950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/bensound-hipjazz.mp3 using Guid(ae02ea60bac95cf45b5ec1d45e281950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e4bd85b59b7c6d9a3f73f407c2ed693') in 0.063537 seconds 
+  Import took 0.067215 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 62.621685 seconds.
-  path: Assets/Animations
-  artifactKey: Guid(deb4e8870ae806b4abcdeec9ab6a7a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations using Guid(deb4e8870ae806b4abcdeec9ab6a7a25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae772ce841871afc5b6e3646cb6fe1e6') in 0.005306 seconds 
-  Import took 0.008694 seconds .
+  Time since last request: 0.000154 seconds.
+  path: Assets/Audio/bensound-theduel.mp3
+  artifactKey: Guid(2dd8ae0b0f4676b4c82b884ce7dd0ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Audio/bensound-theduel.mp3 using Guid(2dd8ae0b0f4676b4c82b884ce7dd0ed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6d115ee3b8b958088048f412cd95f52') in 0.011062 seconds 
+  Import took 0.014021 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003626 seconds.
+Registered in 0.002849 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file data-0000019C7F85DE80 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F85DE80 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA7BBC20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBE31310 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F598600 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA580A60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F6031A0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA6B5FF0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F85DE80 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7FD65010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA580A60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE734AC50 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\PackageToolsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA7BBC20 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE933A020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA792080 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA6B5FF0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7831030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7831030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE934B430 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7831030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEC134030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7831030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA0EB010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE5C22010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE5CC1020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA6B5FF0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE603A010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\AstarPathfindingProject.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE74F1060 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE61C7E30 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F895D30 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE62DA010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7FD65010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F598600 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBE29EE0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F5F4C00 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\AstarPathfindingProjectEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F5F4C00 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA580A60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.45 ms, found 3 plugins.
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.834 seconds
+- Completed reload, in  0.749 seconds
 Domain Reload Profiling:
-	ReloadAssembly (834ms)
-		BeginReloadAssembly (104ms)
+	ReloadAssembly (749ms)
+		BeginReloadAssembly (94ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (35ms)
-		EndReloadAssembly (679ms)
-			LoadAssemblies (74ms)
+			CreateAndSetChildDomain (27ms)
+		EndReloadAssembly (614ms)
+			LoadAssemblies (63ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (237ms)
+			SetupTypeCache (192ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (38ms)
-			SetupLoadedEditorAssemblies (246ms)
+			RebuildScriptCaches (31ms)
+			SetupLoadedEditorAssemblies (253ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (0ms)
+				RefreshPlugins (1ms)
 				BeforeProcessingInitializeOnLoad (53ms)
-				ProcessInitializeOnLoadAttributes (177ms)
-				ProcessInitializeOnLoadMethodAttributes (5ms)
-				AfterProcessingInitializeOnLoad (6ms)
+				ProcessInitializeOnLoadAttributes (185ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (9ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2455 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 112.3 MB.
+System memory in use before: 112.4 MB.
 System memory in use after: 112.6 MB.
 
-Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2955.
-Total: 2.767000 ms (FindLiveObjects: 0.209700 ms CreateObjectMapping: 0.088200 ms MarkObjects: 2.454400 ms  DeleteObjects: 0.013600 ms)
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2959.
+Total: 2.550400 ms (FindLiveObjects: 0.232700 ms CreateObjectMapping: 0.054800 ms MarkObjects: 2.247700 ms  DeleteObjects: 0.014500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
@@ -202,34 +370,148 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.875733 seconds.
-  path: Assets/Animations/Voda.controller
-  artifactKey: Guid(46b678a198745c8488a8b3e7a1e51836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Voda.controller using Guid(46b678a198745c8488a8b3e7a1e51836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '490dffa14f73bceb7b3eaf225a9f8bfe') in 0.016268 seconds 
-  Import took 0.019521 seconds .
+  Time since last request: 28.462421 seconds.
+  path: Assets/Scenes/BattleTest.unity
+  artifactKey: Guid(5199225f519881c4490b6b74d4dbdea0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/BattleTest.unity using Guid(5199225f519881c4490b6b74d4dbdea0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b3f7b9cfe2683ad6412194eea4757a6') in 0.015626 seconds 
+  Import took 0.019359 seconds .
 
 ========================================================================
-Received Import Request.
-  Time since last request: 2515.793878 seconds.
-  path: Assets/Animations/Voda_walk.anim
-  artifactKey: Guid(f489d5c830f916b429f2855bfa942261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Voda_walk.anim using Guid(f489d5c830f916b429f2855bfa942261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03e6d975e1e70952f88993ce5ec9e073') in 0.008819 seconds 
-  Import took 0.012973 seconds .
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002816 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file data-0000019AEB7EF460 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Assembly-CSharp.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F85DE80 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBAA8010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AED773940 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.VSCode.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA959F70 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE9000080 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F6031A0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\PsdPlugin.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE9000080 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F85DE80 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEAC7F470 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEngine.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE9000080 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Timeline.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA957BB0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\PackageToolsEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEAD34870 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE933A020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEditor.TestRunner.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AECD65DD0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE9000080 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEAE85C60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBCC8D10 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBD89050 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEAE85C60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEditor.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBAA8010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEB742820 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Rider.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7330440 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\UnityEngine.UI.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE5C22010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Mathematics.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEACD72D0 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Cinemachine.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE71CD010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEB3C0080 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\AstarPathfindingProject.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE7330440 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Triangle.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F5E4280 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEBD89050 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE62DA010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Timeline.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE716A030 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEA0A8020 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AF87C1790 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE66C3050 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\AstarPathfindingProjectEditor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AEAE85C60 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019C7F500110 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Symbol file data-0000019AE71CD010 doesn't match image C:\Users\Lunar\OneDrive\Documents\Repo\MetaRPG\MetaRPG_Game\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll
+Symbol file LoadedFromMemory is not a mono symbol file
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.708 seconds
+Domain Reload Profiling:
+	ReloadAssembly (709ms)
+		BeginReloadAssembly (91ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (576ms)
+			LoadAssemblies (62ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (196ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (29ms)
+			SetupLoadedEditorAssemblies (219ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (45ms)
+				ProcessInitializeOnLoadAttributes (161ms)
+				ProcessInitializeOnLoadMethodAttributes (4ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2455 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 112.4 MB.
+System memory in use after: 112.7 MB.
 
-========================================================================
-Received Import Request.
-  Time since last request: 86.080910 seconds.
-  path: Assets/Animations/Edward.controller
-  artifactKey: Guid(c970f12fef0c0ce41aee9fbcb4254342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Edward.controller using Guid(c970f12fef0c0ce41aee9fbcb4254342) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38a3170915e6136db7de82858b3a67bf') in 0.006346 seconds 
-  Import took 0.010393 seconds .
+Unloading 16 unused Assets to reduce memory usage. Loaded Objects now: 2962.
+Total: 2.596500 ms (FindLiveObjects: 0.212000 ms CreateObjectMapping: 0.064300 ms MarkObjects: 2.304300 ms  DeleteObjects: 0.015300 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 9.791611 seconds.
-  path: Assets/Animations/Mortimer.controller
-  artifactKey: Guid(322ddbe69ce00d44da43999b4fb8ce83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Animations/Mortimer.controller using Guid(322ddbe69ce00d44da43999b4fb8ce83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f69ea2c9533fa1133c2282111e89043b') in 0.005741 seconds 
-  Import took 0.009739 seconds .
-
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

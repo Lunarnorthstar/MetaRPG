@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class CharacterSwitcher : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class CharacterSwitcher : MonoBehaviour
     public PointAndClick character3;
 
     public GameObject enemy;
+
+    public FollowOffset followOffsetPoint;
 
     [Space]
     public int characterSelectionIndex;
@@ -162,9 +165,12 @@ public class CharacterSwitcher : MonoBehaviour
                 character2.swtichCharacter(false);
                 character3.swtichCharacter(false);
 
-                character1.gameObject.SetActive(true);
-                character2.gameObject.SetActive(false);
-                character3.gameObject.SetActive(false);
+                followOffsetPoint.activeCharacter = character1.transform;
+
+                character1.GetComponent<CapsuleCollider2D>().enabled = false;
+                character2.GetComponent<CapsuleCollider2D>().enabled = true;
+                character3.GetComponent<CapsuleCollider2D>().enabled = true;
+
 
                 break;
 
@@ -177,10 +183,11 @@ public class CharacterSwitcher : MonoBehaviour
                 character2.swtichCharacter(true);
                 character3.swtichCharacter(false);
 
-                character1.gameObject.SetActive(false);
-                character2.gameObject.SetActive(true);
-                character3.gameObject.SetActive(false);
+                followOffsetPoint.activeCharacter = character2.transform;
 
+                character1.GetComponent<CapsuleCollider2D>().enabled = true;
+                character2.GetComponent<CapsuleCollider2D>().enabled = false;
+                character3.GetComponent<CapsuleCollider2D>().enabled = true;
                 break;
 
             case 3:
@@ -192,12 +199,19 @@ public class CharacterSwitcher : MonoBehaviour
                 character2.swtichCharacter(false);
                 character3.swtichCharacter(true);
 
-                character1.gameObject.SetActive(false);
-                character2.gameObject.SetActive(false);
-                character3.gameObject.SetActive(true);
+                followOffsetPoint.activeCharacter = character3.transform;
+
+                character1.GetComponent<CapsuleCollider2D>().enabled = false;
+                character2.GetComponent<CapsuleCollider2D>().enabled = false;
+                character3.GetComponent<CapsuleCollider2D>().enabled = true;
 
                 break;
         }
+    }
+
+    public void switchScene()
+    {
+        SceneManager.LoadScene(1);
     }
 }
 

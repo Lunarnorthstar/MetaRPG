@@ -1155,8 +1155,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 5
   attackDamage: 5
+  mannaRequirement: 0
+  currentManna: 0
   battleManager: {fileID: 910117425}
   attackButton: {fileID: 979274914}
+  skillButton: {fileID: 155409807}
   pointAndClick: {fileID: 0}
   canAttack: 0
 --- !u!114 &418831744
@@ -1602,8 +1605,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 10
   attackDamage: 4
+  mannaRequirement: 0
+  currentManna: 0
   battleManager: {fileID: 910117425}
   attackButton: {fileID: 979274914}
+  skillButton: {fileID: 155409807}
   pointAndClick: {fileID: 0}
   canAttack: 0
 --- !u!114 &605647481
@@ -54561,8 +54567,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 8
   attackDamage: 8
+  mannaRequirement: 0
+  currentManna: 0
   battleManager: {fileID: 910117425}
   attackButton: {fileID: 979274914}
+  skillButton: {fileID: 155409807}
   pointAndClick: {fileID: 0}
   canAttack: 0
 --- !u!114 &868284000
@@ -54702,6 +54711,7 @@ MonoBehaviour:
   character2: {fileID: 1200896247}
   character3: {fileID: 1251847492}
   enemy: {fileID: 483767203}
+  followOffsetPoint: {fileID: 0}
   characterSelectionIndex: 0
   isInABattle: 1
   battleManager: {fileID: 910117425}

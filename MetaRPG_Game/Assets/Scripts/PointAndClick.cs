@@ -11,9 +11,13 @@ public class PointAndClick : MonoBehaviour
     public bool canMove = true;
     public bool canAttack;
 
+    public Transform sprite;
+
     [Header("Player Movement and Navigation")]
     public float playerSpeed;
     public float nextWayPointDistance = 3;
+    public float nonActiveModifer = 0.5f;
+
 
     [Header("Battle Information")]
     public bool isGoblin;
@@ -40,7 +44,7 @@ public class PointAndClick : MonoBehaviour
     public CinemachineVirtualCamera VirtualCam;
     public bool isActiveCharacter;
 
-
+    public Transform nonActiveFollowPoint;
     //other navigation stuff--------
 
     bool reachedEndOfPath;
@@ -48,6 +52,7 @@ public class PointAndClick : MonoBehaviour
 
     Vector2 mousepos;
     [SerializeField] Vector3 navigationPoint;
+    Vector3 altPoint;
 
     Rigidbody2D rb;
     Seeker seeker;
@@ -62,6 +67,8 @@ public class PointAndClick : MonoBehaviour
         mainCam = Camera.main;
 
         PlayerPrefs.SetInt("canMove", 1); //alow player to move
+
+        sprite = transform.GetChild(0);
 
         //non battle stuff
         if (!isInBattle)
@@ -116,6 +123,11 @@ public class PointAndClick : MonoBehaviour
         {
             seeker.StartPath(rb.position, navigationPoint, hasFinishedCalculating);
         }
+        else
+        {
+
+            seeker.StartPath(rb.position, nonActiveFollowPoint.position, hasFinishedCalculating);
+        }
     }
 
     //I dont really understand what this even does ngl
@@ -131,8 +143,17 @@ public class PointAndClick : MonoBehaviour
     //this does all the pathfinding to the place you clicked
     void FixedUpdate()
     {
+        if (navigationPoint.x < transform.position.x)
+        {
+            sprite.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            sprite.localScale = new Vector3(1, 1, 1);
+        }
         if (!isInBattle)
         {
+
             if (path == null)
                 return;
 
@@ -147,10 +168,18 @@ public class PointAndClick : MonoBehaviour
             }
 
             Vector2 dir = ((Vector2)path.vectorPath[currentWayPointIndex] - rb.position).normalized;
-            Vector2 force = dir * playerSpeed;
+            Vector2 force;
+
+            if (isActiveCharacter)
+            {
+                force = dir * playerSpeed;
+            }
+            else
+            {
+                force = dir * playerSpeed * nonActiveModifer;
+            }
 
             rb.AddForce(force);
-
             float disance = Vector2.Distance(rb.position, path.vectorPath[currentWayPointIndex]);
 
             if (disance < nextWayPointDistance)
@@ -263,7 +292,8 @@ public class PointAndClick : MonoBehaviour
 
     public void makeMove(Vector3 pos)
     {
-        navigationPoint = pos;
+        if (isActiveCharacter)
+            navigationPoint = pos;
     }
 
     public void swtichCharacter(bool isNowActiveCharacter)
@@ -292,106 +322,106 @@ public class PointAndClick : MonoBehaviour
         );
 
         //if you click, it will store that position in a vector3 (so that it can be used in the waypoint system)
-        if (isActiveCharacter)//do nothing of this if you arent active
+        // if (isActiveCharacter)//do nothing of this if you arent active
+        // {
+        if (isInBattle)//if you are in battle, then it will do tile detection and nothing else
         {
-            if (isInBattle)//if you are in battle, then it will do tile detection and nothing else
+            RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);//see if theres anything where the mouse is
+
+            if (hit.collider != null && !EventSystem.current.IsPointerOverGameObject())//did ya hhit something?
             {
-                RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);//see if theres anything where the mouse is
+                GameObject objectYouHit = hit.collider.gameObject; //store the hit object in a local variable
 
-                if (hit.collider != null && !EventSystem.current.IsPointerOverGameObject())//did ya hhit something?
+                //Debug.Log(objectYouHit.name);
+
+                if (objectYouHit.CompareTag("Tile"))//is it a tile?
                 {
-                    GameObject objectYouHit = hit.collider.gameObject; //store the hit object in a local variable
-
-                    //Debug.Log(objectYouHit.name);
-
-                    if (objectYouHit.CompareTag("Tile"))//is it a tile?
+                    if (Input.GetMouseButtonDown(0))//did you click this frame?
                     {
-                        if (Input.GetMouseButtonDown(0))//did you click this frame?
-                        {
-                            if (canMove && PlayerPrefs.GetInt("canMove") == 1)//if you clicked on a tile you can click on and you can move AND the delay has been met
-                            {
-                                if (Mathf.Floor(Vector3.Distance(transform.position, objectYouHit.transform.position))
-                                 < battleSystemMaxMoveDistance)//is the tile u clicked on within movement range?
-                                {
-                                    makeMove(objectYouHit.transform.position);//move the person
-                                    battleManager.checkInfo(true, false);//update the manager with this info
-                                    canMove = false;
-
-                                    playerAttack.finishedMoving();
-                                }
-                            }
-                            else//did you click on a tile but cant move (indicates that ur attacking)
-                            {
-                                if (Mathf.Floor(Vector3.Distance(transform.position, objectYouHit.transform.position))
-                                 < playerAttack.attackRange)//is the tile u clicked on within attack range?
-                                {
-                                    if (canAttack)
-                                    {
-                                        playerAttack.attack(objectYouHit.GetComponent<TileInfo>());//ATTACK
-
-                                        canAttack = false;
-
-                                        StartCoroutine(waitToMove());
-                                    }
-                                }
-                            }
-                        }
-                        else
+                        if (canMove && PlayerPrefs.GetInt("canMove") == 1)//if you clicked on a tile you can click on and you can move AND the delay has been met
                         {
                             if (Mathf.Floor(Vector3.Distance(transform.position, objectYouHit.transform.position))
-                             < battleSystemMaxMoveDistance)//if its outside the range then it shall be red
+                             < battleSystemMaxMoveDistance)//is the tile u clicked on within movement range?
                             {
-                                objectYouHit.GetComponent<SpriteRenderer>().color = tileSelectedRightColour;
-                            }
-                            else
-                            {
-                                objectYouHit.GetComponent<SpriteRenderer>().color = tileSelectedWrongColour;
+                                makeMove(objectYouHit.transform.position);//move the person
+                                battleManager.checkInfo(true, false);//update the manager with this info
+                                canMove = false;
+
+                                playerAttack.finishedMoving();
                             }
                         }
-                    }
-                }
-                return;
-            }
+                        else//did you click on a tile but cant move (indicates that ur attacking)
+                        {
+                            if (Mathf.Floor(Vector3.Distance(transform.position, objectYouHit.transform.position))
+                             < playerAttack.attackRange)//is the tile u clicked on within attack range?
+                            {
+                                if (canAttack)
+                                {
+                                    playerAttack.attack(objectYouHit.GetComponent<TileInfo>());//ATTACK
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);
-                if (hit.collider != null)
-                {
-                    GameObject objectYouHit = hit.collider.gameObject;
+                                    canAttack = false;
 
-                    //have you clicked on a building (somewhere the player cannot move to)
-                    if (objectYouHit.layer == 7)
-                    {
-                        //spawn in a particle effect and delete it after 2 seconds. Do nothing else.
-                        Vector3 spawnPos = new Vector3(
-                            mousepos.x,
-                            mousepos.y,
-                            transform.position.z
-                        );
-
-                        GameObject particleInstance = Instantiate(
-                            unsuccessfulClickParticle,
-                            spawnPos,
-                            Quaternion.identity
-                        );
-                        Destroy(particleInstance, 2);
+                                    StartCoroutine(waitToMove());
+                                }
+                            }
+                        }
                     }
                     else
                     {
-                        navigationPoint = new Vector3(mousepos.x, mousepos.y, transform.position.z);
-
-                        GameObject particleInstance = Instantiate(
-                            successfulClickParticle,
-                            navigationPoint,
-                            Quaternion.identity
-                        );
-                        Destroy(particleInstance, 2);
+                        if (Mathf.Floor(Vector3.Distance(transform.position, objectYouHit.transform.position))
+                         < battleSystemMaxMoveDistance)//if its outside the range then it shall be red
+                        {
+                            objectYouHit.GetComponent<SpriteRenderer>().color = tileSelectedRightColour;
+                        }
+                        else
+                        {
+                            objectYouHit.GetComponent<SpriteRenderer>().color = tileSelectedWrongColour;
+                        }
                     }
+                }
+            }
+            return;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(mousepos, Vector2.zero);
+            if (hit.collider != null)
+            {
+                GameObject objectYouHit = hit.collider.gameObject;
+
+                //have you clicked on a building (somewhere the player cannot move to)
+                if (objectYouHit.layer == 7)
+                {
+                    //spawn in a particle effect and delete it after 2 seconds. Do nothing else.
+                    Vector3 spawnPos = new Vector3(
+                        mousepos.x,
+                        mousepos.y,
+                        transform.position.z
+                    );
+
+                    GameObject particleInstance = Instantiate(
+                        unsuccessfulClickParticle,
+                        spawnPos,
+                        Quaternion.identity
+                    );
+                    Destroy(particleInstance, 2);
+                }
+                else
+                {
+                    navigationPoint = new Vector3(mousepos.x, mousepos.y, transform.position.z);
+
+                    GameObject particleInstance = Instantiate(
+                        successfulClickParticle,
+                        navigationPoint,
+                        Quaternion.identity
+                    );
+                    Destroy(particleInstance, 2);
                 }
             }
         }
     }
+
 
     IEnumerator waitToMove()
     {
