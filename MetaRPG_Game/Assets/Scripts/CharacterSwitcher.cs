@@ -32,6 +32,15 @@ public class CharacterSwitcher : MonoBehaviour
     [Space]
     public CinemachineVirtualCamera virtualCam;
 
+
+    void Start()
+    {
+        if (!isInABattle)
+        {
+            swtichCharacter();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -210,6 +219,11 @@ public class CharacterSwitcher : MonoBehaviour
     }
 
     public void switchScene()
+    {
+        SceneManager.LoadScene(2);
+    }
+
+    public void leaveBattle()
     {
         SceneManager.LoadScene(1);
     }

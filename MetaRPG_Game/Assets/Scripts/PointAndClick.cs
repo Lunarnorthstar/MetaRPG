@@ -18,6 +18,10 @@ public class PointAndClick : MonoBehaviour
     public float nextWayPointDistance = 3;
     public float nonActiveModifer = 0.5f;
 
+    [SerializeField] float jiggleDistance = 0.1f;
+
+    public Animator ani;
+
 
     [Header("Battle Information")]
     public bool isGoblin;
@@ -42,9 +46,12 @@ public class PointAndClick : MonoBehaviour
     [Header("Character Switching System")]
     public GameObject selectionArrow;
     public CinemachineVirtualCamera VirtualCam;
+    public CinemachineTargetGroup targetGroup;
     public bool isActiveCharacter;
 
     public Transform nonActiveFollowPoint;
+    public Transform clickPos;
+    public Transform followGroup;
     //other navigation stuff--------
 
     bool reachedEndOfPath;
@@ -75,6 +82,8 @@ public class PointAndClick : MonoBehaviour
         {
             InvokeRepeating("updatePath", 0, 0.1f);
             navigationPoint = transform.position;
+
+            ani = GetComponent<Animator>();
         }
         else //battle initialisation
         {
@@ -121,7 +130,7 @@ public class PointAndClick : MonoBehaviour
     {
         if (isActiveCharacter)
         {
-            seeker.StartPath(rb.position, navigationPoint, hasFinishedCalculating);
+            seeker.StartPath(transform.position, navigationPoint, hasFinishedCalculating);
         }
         else
         {
@@ -179,10 +188,21 @@ public class PointAndClick : MonoBehaviour
                 force = dir * playerSpeed * nonActiveModifer;
             }
 
-            rb.AddForce(force);
-            float disance = Vector2.Distance(rb.position, path.vectorPath[currentWayPointIndex]);
+            if (Vector3.Distance(transform.position, navigationPoint) > jiggleDistance)
+            {
+                rb.AddForce(force);
+                ani.SetBool("Walk", true);
+            }
+            else
+            {
+                ani.SetBool("Walk", false);
+            }
 
-            if (disance < nextWayPointDistance)
+
+
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWayPointIndex]);
+            //if (isActiveCharacter) Debug.Log(distance);//(Vector3.Distance(transform.position, navigationPoint));
+            if (distance < nextWayPointDistance)
             {
                 currentWayPointIndex++;
             }
@@ -300,11 +320,21 @@ public class PointAndClick : MonoBehaviour
     {
         if (isNowActiveCharacter)//if is now active character swicth its arrow and make the camera follow it.
         {
+            if (isInBattle)
+            {
+                VirtualCam.Follow = transform;
+            }
+            else
+            {
+                VirtualCam.Follow = followGroup;
+            }
             isActiveCharacter = true;
 
             selectionArrow.SetActive(true);
 
-            VirtualCam.Follow = transform;
+
+
+
         }
         else //otherwise, switch it off.
         {
@@ -417,6 +447,8 @@ public class PointAndClick : MonoBehaviour
                         Quaternion.identity
                     );
                     Destroy(particleInstance, 2);
+
+                    clickPos.position = navigationPoint;
                 }
             }
         }
